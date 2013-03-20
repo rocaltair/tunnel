@@ -11,12 +11,16 @@ with nothing changing.
 sample
 
 client:
-./tunnel -f 5050 -t yourhost:8080 -p passwd &
-tar -czf - yourfiles | nc localhost 5050 
+
+	./tunnel -f 5050 -t yourhost:8080 -p passwd &
+
+	tar -czf - yourfiles | nc localhost 5050 
 
 server:
-./tunnel -f 8080 -t 3030 -p passwd -s &
-nc -l 3030 | tar -xzf - 
+
+	./tunnel -f 8080 -t 3030 -p passwd -s &
+
+	nc -l 3030 | tar -xzf - 
 
 datas between client and server:8080 are encrypted
 
@@ -35,13 +39,13 @@ a better way
 
 server :
 
-ssh -DN 7070 username@localhost &
+	ssh -DN 7070 username@localhost &
 
-./tunnel -f 127.0.0.1:7070 -t 22 -p passwd -s
+	./tunnel -f 127.0.0.1:7070 -t 22 -p passwd -s
 
 client :
 
-./tunnel -f 6060 -t vps_host:7070 -p passwd
+	./tunnel -f 6060 -t vps_host:7070 -p passwd
 
 now you can get a proxy connetion based on socks 5 on port 6060 avoid GFW's sniffering
 
