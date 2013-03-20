@@ -34,10 +34,13 @@ it can't be a good enough way to proxy, for GFW can sniffer that.
 a better way
 
 server :
+
 ssh -DN 7070 username@localhost &
+
 ./tunnel -f 127.0.0.1:7070 -t 22 -p passwd -s
 
 client :
+
 ./tunnel -f 6060 -t vps_host:7070 -p passwd
 
 now you can get a proxy connetion based on socks 5 on port 6060 avoid GFW's sniffering
@@ -48,10 +51,15 @@ change Port 22 to Port 127.0.0.1:22 or other(s)
 ---------------------------------
 
 Usage of tunnel:
+
 	-d=false: using debug mode
+
 	-f="127.0.0.1:6060": endpoint where stream from,fmt:'host:port|:port|port'
+
 	-p="passwd": your passwd
+
 	-s=false: as a server
+
 	-t="127.0.0.1:5432": endpoint where stream to,fmt:'host:port|:port|port'
 
 enjoy it!
