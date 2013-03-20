@@ -1,10 +1,10 @@
 tunnel
 ======
 
-a cryptor based on RC4 algorithm for network transmission.
+a cryptor based on RC4 algorithm for network transmitting.
 
-if you got something to transfer using unsafe protocol,
-such as ftp or nc, you can use this for safe transfering 
+if you got something to transfer using insecure protocol,
+such as ftp or nc, you can use this for secure transmitting
 with nothing changing.
 
 --------------------------------------------------------
@@ -25,32 +25,28 @@ server:
 datas between client and server:8080 are encrypted
 
 --------------------------------------------------------
-
-you can also do some interesting things like below:
-
---------------------------------------------------------
 sample
 
-ssh -DN 7070 username@host &
+ssh -DN 7070 username@vpshost &
 
-it can't be a good enough way to proxy, for GFW can sniffer that.
+it can't be a good enough way to establish a proxy, for GFW can sniff that out.
 
-a better way
+a better way:
 
 server :
 
-	ssh -DN 7070 username@localhost &
+	ssh -DN localhost:7070 username@localhost &
 
-	./tunnel -f 127.0.0.1:7070 -t 22 -p passwd -s
+	./tunnel -f localhost:7070 -t 22 -p passwd -s
 
 client :
 
-	./tunnel -f 6060 -t vps_host:7070 -p passwd
+	./tunnel -f 6060 -t vpshost:7070 -p passwd
 
-now you can get a proxy connetion based on socks 5 on port 6060 avoid GFW's sniffering
+now you can get a proxy connetion based on socks 5 on port 6060 to avoid GFW's sniffing
 
-for better secury, you need to change some configurations for sshd
-change Port 22 to Port 127.0.0.1:22 or other(s)
+better, you need to change some configurations for sshd,
+change default Port 22 to Port 127.0.0.1:22(local connections only) or other(s)
 
 ---------------------------------
 
