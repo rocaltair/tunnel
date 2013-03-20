@@ -19,9 +19,11 @@ server:
 nc -l 3030 | tar -xzf - 
 
 datas between client and server:8080 are encrypted
+
 --------------------------------------------------------
 
 you can also do some interesting things like below:
+
 --------------------------------------------------------
 sample
 
@@ -46,11 +48,11 @@ change Port 22 to Port 127.0.0.1:22 or other(s)
 ---------------------------------
 
 Usage of tunnel:
-  -d=false: using debug mode
-  -f="127.0.0.1:6060": endpoint where stream from,fmt:'host:port|:port|port'
-  -p="passwd": your passwd
-  -s=false: as a server
-  -t="127.0.0.1:5432": endpoint where stream to,fmt:'host:port|:port|port'
+	-d=false: using debug mode
+	-f="127.0.0.1:6060": endpoint where stream from,fmt:'host:port|:port|port'
+	-p="passwd": your passwd
+	-s=false: as a server
+	-t="127.0.0.1:5432": endpoint where stream to,fmt:'host:port|:port|port'
 
 enjoy it!
 
