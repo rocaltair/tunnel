@@ -37,7 +37,7 @@ server :
 
 	ssh -DN localhost:7070 username@localhost &
 
-	./tunnel -f localhost:7070 -t 22 -p passwd -s
+	./tunnel -f 0.0.0.0:7070 -t 22 -p passwd -s
 
 client :
 
@@ -47,6 +47,21 @@ now you can get a proxy connetion based on socks 5 on port 6060 to avoid GFW's s
 
 better, you need to change some configurations for sshd,
 change default Port 22 to Port 127.0.0.1:22(local connections only) or other(s)
+
+---------------------------------------------------------
+sample 
+
+server : 
+
+	./tunnel -f 0.0.0.0:7070 -t 22 -p passwd -s
+
+client :
+
+	./tunnel -f 6060 -t vpshost:7070 -p passwd &
+
+	ssh -p 6060 username@localhost
+
+it works like 'ssh username@vpshost -p 22', but more secure.
 
 ---------------------------------
 
@@ -61,6 +76,23 @@ Usage of tunnel:
 	-s=false: as a server
 
 	-t="127.0.0.1:5432": endpoint where stream to,fmt:'host:port|:port|port'
+
+---------------------------------
+
+build:
+
+	git clone https://github.com/rocaltair/tunnel.git 
+
+	cd tunnel && go build
+
+---------------------------------
+
+platform and environment:
+
+	Windows, Linux or Mac OS X
+
+	golang required (see also : http://golang.org/ and https://code.google.com/p/go/downloads/list)
+	
 
 enjoy it!
 
