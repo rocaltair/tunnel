@@ -8,7 +8,8 @@ such as ftp or nc, you can use this for secure transmitting
 with nothing changing.
 
 --------------------------------------------------------
-sample
+Sample 1
+======
 
 client:
 
@@ -25,7 +26,8 @@ server:
 datas between client and server:8080 are encrypted
 
 --------------------------------------------------------
-sample
+Sample 2
+======
 
 ssh -DN 7070 username@vpshost &
 
@@ -49,7 +51,8 @@ better, you need to change some configurations for sshd,
 change default Port 22 to Port 127.0.0.1:22(local connections only) or other(s)
 
 ---------------------------------------------------------
-sample 
+Sample 3
+======
 
 server : 
 
@@ -66,6 +69,7 @@ it works like 'ssh username@vpshost -p 22', but more secure.
 ---------------------------------
 
 Usage of tunnel:
+======
 
 	-d=false: using debug mode
 
@@ -79,7 +83,8 @@ Usage of tunnel:
 
 ---------------------------------
 
-build:
+Build:
+======
 
 	git clone https://github.com/rocaltair/tunnel.git 
 
@@ -87,7 +92,8 @@ build:
 
 ---------------------------------
 
-platform and environment:
+Platform & Environment:
+======
 
 	Windows, Linux or Mac OS X
 
