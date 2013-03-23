@@ -29,7 +29,7 @@ datas between client and server:8080 are encrypted
 Sample 2
 ======
 
-ssh -DN 7070 username@vpshost &
+	ssh -DN 7070 username@vpshost &
 
 it can't be a good enough way to establish a proxy, for GFW can sniff that out.
 
